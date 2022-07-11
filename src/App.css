@@ -6,6 +6,7 @@
 css파일은 <div id = root>태그 바깥의 요소를 어떻게 바꿀수있는지?
 
 npm start 하면 헤드에 style 태그들이 올라가있다
+그리고 bundle.js도 선언되어있다.
 왜 올라가는진 모르지만 index.html의 헤드에 올라가는 style태그라면
 body에 접근할 수 있는게 이상하지는 않은듯하다*/
 body{
@@ -37,4 +38,65 @@ body{
   min-height: 100vh;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+/*MyButton*/
+
+.MyButton{
+  cursor:pointer;
+  border: none;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+
+  font-size: 18px;
+  /*버튼안에있는글자가짤려서두줄이되지않게해주는속성 */
+  white-space: nowrap;
+}
+.MyButton_default{
+  background-color:#ececec;
+  color: black;
+}
+.MyButton_positive{
+  background-color: #64c964;
+  color: white;
+}
+.MyButton_negative{
+  background-color: red;
+  color: white;
+}
+
+/* HEADER */
+
+header{
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+header > div {
+  display: flex;
+}
+header .head_text{
+  width: 50%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+header .head_btn_left{
+  width: 25%;
+  justify-content: start;
+}
+
+header .head_btn_right{
+  width: 25%;
+  justify-content: end;
+}
+
+header button{
+  font-family:'Noto Sans KR', sans-serif;
 }
