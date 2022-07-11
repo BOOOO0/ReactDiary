@@ -1,4 +1,40 @@
-.App{
-  padding : 20px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Yeon+Sung&display=swap');
 
+/*html 파일에서 stylesheet으로 선언되지 않은 css파일이 있다
+그 파일은 App.js 파일에 import 되어있다.
+그리고 App.js는 html파일의 body 아래 <div id=root> 아래에 있다 
+css파일은 <div id = root>태그 바깥의 요소를 어떻게 바꿀수있는지?
+
+npm start 하면 헤드에 style 태그들이 올라가있다
+왜 올라가는진 모르지만 index.html의 헤드에 올라가는 style태그라면
+body에 접근할 수 있는게 이상하지는 않은듯하다*/
+body{
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+  margin: 0px;
+}
+/*media query = 조건문과 비슷
+650px 이상일 때 어떤 스타일을 적용하겠다*/
+@media (min-width:650px){
+  .App{
+    width:640px;
+  }
+}
+@media (min-width:650px){
+  .App{
+    width:90vw;
+  }
+}
+#root{
+  background-color: white;
+  box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+}
+.App{
+  min-height: 100vh;
+  padding-left: 30px;
+  padding-right: 30px;
 }

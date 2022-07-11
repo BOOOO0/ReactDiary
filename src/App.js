@@ -15,7 +15,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/new" element={<New />} />
           <Route exact path="/edit" element={<Edit />} />
-          <Route exact path="/diary" element={<Diary />} />
+          <Route exact path="/diary:id" element={<Diary />} />
         </Routes>
         <RouteTest />
       </div>
