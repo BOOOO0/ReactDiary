@@ -4,8 +4,7 @@ import New from "./pages/New";
 import Edit from "./pages/Edit";
 import Diary from "./pages/Diary";
 import Home from "./pages/Home";
-import MyButton from "./components/MyButton";
-import MyHeader from "./components/MyHeader";
+
 import React, { useReducer, useRef } from "react";
 
 //process.env.PUBLIC_URL public 폴더의 경로를 바로 쓸 수 있는 명령어
@@ -39,8 +38,42 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 // dispatch 함수들을 공급할 context
 export const DiaryDispatchContext = React.createContext();
+
+const dummyData = [
+  {
+    id: 1,
+    emotion: 1,
+    content: "오늘의일기1",
+    date: 1658040821673,
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: "오늘의일기2",
+    date: 1658040821674,
+  },
+  {
+    id: 3,
+    emotion: 3,
+    content: "오늘의일기3",
+    date: 1658040821675,
+  },
+  {
+    id: 4,
+    emotion: 4,
+    content: "오늘의일기4",
+    date: 1658040821676,
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: "오늘의일기5",
+    date: 1658040821677,
+  },
+];
+
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
+  const [data, dispatch] = useReducer(reducer, dummyData);
   const dataId = useRef(0);
   //CREATE
   const onCreate = (date, content, emotion) => {
@@ -71,28 +104,12 @@ function App() {
       },
     });
   };
+
   return (
     <DiaryStateContext.Provider value={data}>
       <DiaryDispatchContext.Provider value={{ onCreate, onEdit, onRemove }}>
         <BrowserRouter>
           <div className="App">
-            <MyHeader
-              headText={"App"}
-              leftChild={
-                <MyButton
-                  text={"왼쪽 버튼"}
-                  onClick={() => alert("click!")}
-                  type={"positive"}
-                />
-              }
-              rightChild={
-                <MyButton
-                  text={"오른쪽 버튼"}
-                  onClick={() => alert("click!")}
-                  type={"negative"}
-                />
-              }
-            />
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/new" element={<New />} />
