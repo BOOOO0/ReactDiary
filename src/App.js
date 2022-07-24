@@ -114,7 +114,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/new" element={<New />} />
               <Route exact path="/edit" element={<Edit />} />
-              <Route exact path="/diary:id" element={<Diary />} />
+              <Route exact path="/diary/:id" element={<Diary />} />
             </Routes>
           </div>
         </BrowserRouter>
