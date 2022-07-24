@@ -35,9 +35,7 @@ const Home = () => {
     //diaryList에 대한 부분이 렌더링되지 않음
   }, [diaryList, curDate]);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  useEffect(() => {}, [data]);
   const increaseMonth = () => {
     // 새로운 데이터 객체를 생성해서 전달해주는데
     // Month가 1씩 증가하다가 최대치를 넘으면 year도 알아서 증가한다
